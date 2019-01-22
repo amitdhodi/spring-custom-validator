@@ -34,3 +34,4 @@ public class CustomerLocationValidator implements ConstraintValidator<ValidCusto
         return isValid;
     }
 }
+
