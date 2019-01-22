@@ -6,9 +6,7 @@ Custom validator using spring annotations
 A custom annotation "NumericString" is created which checks if the string passed is numeric or not using custom validator.
 
 The custom annotation is applied to below attributes of the CustomerLocation model:
-locationId
-countryCode
-postCode
+locationId, countryCode & postCode
 
-Also, "ValidCustomerLocation" custom annotation will validate the incoming CustomerLocation object for any contraint violation and validate it.
+Also, "ValidCustomerLocation" custom annotation will validate the incoming CustomerLocation object for any contraint violation.
 
