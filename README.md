@@ -15,15 +15,18 @@ Once the application is running on port 8080. Try sending the below POST request
 
 URL: localhost:8080/v1/validate
 
+```
 Request Body: 
 {
 	"locationId":"aa",
 	"countryCode":"sns",
 	"postCode":"ss"
 }
+```
 
 Below response would be received:
 
+```
 {
     "errorCode": "400 BAD_REQUEST",
     "errorMessage": "Validation Errors",
@@ -54,5 +57,5 @@ Below response would be received:
         }
     ]
 }
-
+```
 
