@@ -2,7 +2,7 @@ node {
   def project = 'validators'
   def appName = 'custom-validator'
   def feSvcName = "${appName}-svc"
-  def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
+  def imageTag = "gcr.io/${project}/${appName}:${env.BUILD_NUMBER}"
   // def check = sh script: "kubectl get deployment --namespace jenkins|grep ${feSvcName}|awk '{print \$1}'", returnStdout: true
 
 
