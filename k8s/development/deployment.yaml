@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: custom-validator-deployment
+  namespace: development
+  labels:
+    app: custom-validator-app
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        apps: custom-validator-service
+    spec:
+      containers:
+      - name: custom-validator-service
+        image: gcr.io/bats-qa/custom-validator-service:development
+        ports:
+        - containerPort: 8081
