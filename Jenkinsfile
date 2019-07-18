@@ -13,7 +13,7 @@ node{
 
   //Stage 1 : Build the docker image.
   stage('Build image') {
-      sh("docker build -t ${imageTag} .")
+      sh("docker build -t ${imageTag} . -v $(which docker):/usr/bin/docker")
   }
 
   //Stage 2 : Push the image to docker registry
