@@ -58,5 +58,5 @@ node{
                    sh("echo http://`kubectl --namespace=${namespace} get service/${serviceName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${serviceName}")
                    break
   }
-
+}
 }
