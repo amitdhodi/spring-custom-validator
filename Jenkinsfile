@@ -18,7 +18,7 @@ node{
 
   //Stage 1 : Build the docker image.
   stage('Build image') {
-      sh("docker build -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -t ${imageTag} .")
+      sh("docker build -v /var/run/docker.sock:/var/run/docker.sock -t ${imageTag} .")
   }
 
   //Stage 2 : Push the image to docker registry
