@@ -18,13 +18,13 @@ node{
 
   //Stage 1 : Build the docker image.
   stage('Build image') {
-      sh("gcloud container builds submit . -t ${imageTag} .")
-      /*sh("docker build -v /var/run/docker.sock:/var/run/docker.sock -t ${imageTag} .")*/
+      /*sh("gcloud container builds submit . -t ${imageTag} .")*/
+      sh("docker build -t ${imageTag} .")
   }
 
   //Stage 2 : Push the image to docker registry
   stage('Push image to registry') {
-      sh("gcloud docker -- push ${imageTag}")
+      sh("docker --push ${imageTag}")
   }
 
   //Stage 3 : Deploy Application
