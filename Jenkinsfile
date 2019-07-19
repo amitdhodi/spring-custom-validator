@@ -11,7 +11,6 @@ node{
   //Checkout Code from Git
   checkout scm
 
-  echo "Before stage 1"
   //Stage 1 : Build the docker image.
   stage('Build image') {
     echo "Building image"
