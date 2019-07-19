@@ -11,14 +11,14 @@ node{
   //Checkout Code from Git
   checkout scm
 
-  stage('Initialize'){
+  /*stage('Initialize'){
         def dockerHome = tool 'myDocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
+    }*/
 
   //Stage 1 : Build the docker image.
   stage('Build image') {
-      sh("docker build -t ${imageTag} .")
+      sh("docker build -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -t ${imageTag} .")
   }
 
   //Stage 2 : Push the image to docker registry
