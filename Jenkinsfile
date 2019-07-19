@@ -11,15 +11,10 @@ node{
   //Checkout Code from Git
   checkout scm
 
-  /*stage('Initialize'){
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }*/
-
   //Stage 1 : Build the docker image.
   stage('Build image') {
-      /*sh("gcloud container builds submit . -t ${imageTag} .")*/
-      sh("docker build -t ${imageTag} .")
+    console.log("Building image");
+    sh("docker build -t ${imageTag} .")
   }
 
   //Stage 2 : Push the image to docker registry
