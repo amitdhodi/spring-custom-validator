@@ -8,6 +8,10 @@ node{
   def namespace = 'development'
   def imageTag = "gcr.io/${project}/${appName}:${imageVersion}.${env.BUILD_NUMBER}"
 
+  def dockerHome = tool 'MyDocker'
+  def mavenHome  = tool 'MyMaven'
+  env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
+
   //Checkout Code from Git
   checkout scm
 
