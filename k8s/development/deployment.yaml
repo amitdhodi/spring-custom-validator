@@ -13,7 +13,7 @@ spec:
         apps: custom-validator-service
     spec:
       containers:
-      - name: custom-validator-service
+        - name: custom-validator-service
         image: gcr.io/bats-qa/custom-validator-service:development
         ports:
-        - containerPort: 8081
+          - containerPort: 8081
